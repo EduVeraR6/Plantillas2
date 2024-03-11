@@ -1,0 +1,11 @@
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#image{
+    height: 30rem;
+}

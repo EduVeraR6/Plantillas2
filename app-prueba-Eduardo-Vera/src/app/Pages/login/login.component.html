@@ -1,0 +1,67 @@
+<div class="container d-flex justify-content-center mt-5">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="text-center fs-1 p-3">Inicio de Sesión</h3>
+          </div>
+          <div class="card-body">
+            <form class="p-4" [formGroup]="formLogin" (ngSubmit)="login()">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Usuario</span>
+                <input
+                  id="username"
+                  name="username"
+                  formControlName="username"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ingrese el Username"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+
+              <div
+                class="text-danger"
+                *ngIf="formLogin.controls['username']
+              .touched && formLogin.get('username')?.errors?.['required'] "
+              >
+                El username es requerido
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Password</span>
+                <input
+                  id="password"
+                  name="password"
+                  formControlName="password"
+                  type="password"
+                  class="form-control"
+                  placeholder="Ingresa el Password"
+                  aria-label="Password"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+
+              <div
+                class="text-danger"
+                *ngIf="formLogin.controls['password']
+              .touched && formLogin.get('password')?.errors?.['required'] "
+              >
+                El password es requerido
+              </div>
+
+              <div class="input-group mb-3 d-flex justify-content-center gap-3">
+                <button [disabled]="formLogin.invalid" type="submit" class="btn btn-primary">Ingresar</button>
+                <button routerLink="" type="button" class="btn btn-secondary">
+                  Volver
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,149 @@
+<div class="container d-flex justify-content-center mt-5">
+  <mat-card class="col-6">
+    <mat-card-title>
+      <h1 class="text-center fs-1 p-2">Registro Paciente</h1></mat-card-title
+    >
+    <form [formGroup]="formRegister" >
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Username</span>
+        <input
+          id="username"
+          name="username"
+          formControlName="username"
+          type="text"
+          class="form-control"
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+
+      <div
+        class="text-danger"
+        *ngIf="formRegister.controls['username']
+      .touched && formRegister.get('username')?.errors?.['required'] "
+      >
+        El username es requerido
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Password</span>
+        <input
+          id="password"
+          name="password"
+          formControlName="password"
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          aria-label="Password"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+
+      <div
+        class="text-danger"
+        *ngIf="formRegister.controls['password']
+      .touched && formRegister.get('password')?.errors?.['required'] "
+      >
+        El password es requerido
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nombre</span>
+        <input
+          id="nombre"
+          name="nombre"
+          formControlName="nombre"
+          type="text"
+          class="form-control"
+          placeholder="Nombres"
+          aria-label="Nombres"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="formRegister.controls['nombre']
+      .touched && formRegister.get('nombre')?.errors?.['required'] "
+      >
+        El nombre es requerido
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Apellidos</span>
+        <input
+          id="apellido"
+          name="apellido"
+          formControlName="apellido"
+          type="text"
+          class="form-control"
+          placeholder="Apellidos"
+          aria-label="Apellidos"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="formRegister.controls['apellido']
+      .touched && formRegister.get('apellido')?.errors?.['required'] "
+      >
+        El apellido es requerido
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Email</span>
+        <input
+          id="email"
+          name="email"
+          formControlName="email"
+          type="email"
+          class="form-control"
+          placeholder="example@example.com"
+          aria-label="email"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="formRegister.controls['email']
+      .touched && formRegister.get('email')?.errors?.['required'] "
+      >
+        El email es requerido
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Telefono</span>
+        <input
+          id="telefono"
+          name="telefono"
+          formControlName="telefono"
+          type="number"
+          class="form-control"
+          placeholder="Telefono"
+          aria-label="Telefono"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="formRegister.controls['telefono']
+      .touched && formRegister.get('telefono')?.errors?.['required'] "
+      >
+        El telefono es requerido
+      </div>
+
+      <div class="input-group mb-3 d-flex justify-content-center gap-3">
+        <button
+          [disabled]="formRegister.invalid"
+          type="submit"
+          class="btn btn-primary"
+        >
+          Registrar
+        </button>
+        <button routerLink="" type="button" class="btn btn-secondary">
+          Volver
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

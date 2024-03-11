@@ -1,0 +1,27 @@
+<p>
+  <mat-toolbar id="nav">
+    <div class="container d-flex  justify-content-between ">
+      
+      <div class="">
+        <span class="fs-1">App</span>
+      </div>
+
+      <div *ngIf="!login ; else ingreso" class="d-flex gap-3">
+        <button routerLink="login" type="button" class="btn btn-light">
+          Login
+        </button>
+      </div>
+
+      <ng-template #ingreso>
+
+        <span class="m-3 text-center text-light">{{username}}</span>
+
+
+        <button (click)="logOut()" type="button" class="btn btn-danger">
+          Salir
+        </button>
+      </ng-template>
+    
+    </div>
+  </mat-toolbar>
+</p>
