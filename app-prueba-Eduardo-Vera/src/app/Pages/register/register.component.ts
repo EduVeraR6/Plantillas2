@@ -18,10 +18,7 @@ export class RegisterComponent implements OnInit {
   constructor(private router:Router, private registroService : RegisterService , private alert : MatSnackBar) { }
 
   ngOnInit(): void {
-
     this.crearFormulario();
-
-
   }
 
   crearFormulario():FormGroup{

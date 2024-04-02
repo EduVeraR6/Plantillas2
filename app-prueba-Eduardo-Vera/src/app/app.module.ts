@@ -1,9 +1,7 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { NavComponent } from './Shared/nav/nav.component';
 import { LoginComponent } from './Pages/login/login.component';
@@ -12,7 +10,8 @@ import { HomeComponent } from './Pages/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './Services/interceptor/auth.interceptor';
-
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { AuthInterceptor } from './Services/interceptor/auth.interceptor';
     HomeComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,

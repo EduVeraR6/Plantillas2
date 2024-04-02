@@ -16,6 +16,7 @@ export class DataService {
     return this.http.get(`${environment.apiUrl}/prueba`);
 
   }
+  
   registrarUsuarios(usuarios: any) {
     return this.http.post(`${environment.apiUrl}/usuarios/varios`, usuarios);
   }
@@ -43,11 +44,6 @@ export class DataService {
   registrarMaquinaUsuario(id : number , maquina : any){
     return this.http.post(`${environment.apiUrl}/usuarios/registrar-maquina/${id}`, maquina);
   }
-
-
-
-
-
 
 
 }

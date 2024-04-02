@@ -3,6 +3,10 @@ package ec.sasf.prueba.Eduardo.Vera.Services;
 
 import ec.sasf.prueba.Eduardo.Vera.Entities.Users;
 
+import java.util.List;
+
 public interface IUserService {
     public Users save(Users user);
+
+    public List<Users> usuarios();
 }

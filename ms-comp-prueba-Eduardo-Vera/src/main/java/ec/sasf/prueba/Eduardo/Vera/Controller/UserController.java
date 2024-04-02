@@ -27,4 +27,10 @@ public class UserController {
         user.setPassword(bcrypt.encode(user.getPassword()));
         return ResponseEntity.ok(userService.save(user));
     }
+
+    @GetMapping
+    public ResponseEntity<?> listaUsuarios() {
+        return ResponseEntity.ok(userService.usuarios());
+    }
+
 }

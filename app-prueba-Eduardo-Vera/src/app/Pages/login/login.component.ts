@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   crearForm(): FormGroup {
+    
     return (this.formLogin = new FormGroup({
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    
     const usuario: Login = {
       username: this.formLogin.get('username')?.value,
       password: this.formLogin.get('password')?.value,
