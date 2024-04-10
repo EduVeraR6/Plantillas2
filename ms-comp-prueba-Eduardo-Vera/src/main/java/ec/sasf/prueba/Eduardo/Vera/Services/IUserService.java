@@ -9,4 +9,13 @@ public interface IUserService {
     public Users save(Users user);
 
     public List<Users> usuarios();
+
+    public List<Users> usersByRol(String rol);
+
+    public Users  verUsuario(String username);
+
+    public Users updateUsuario(int id ,Users usuario);
+
+    public List<Users> listUsersByEstado(boolean estado);
+
 }

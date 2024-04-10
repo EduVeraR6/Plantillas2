@@ -3,7 +3,7 @@
     <mat-card-title>
       <h1 class="text-center fs-1 p-2">Registro Paciente</h1></mat-card-title
     >
-    <form [formGroup]="formRegister" >
+    <form [formGroup]="formRegister" (ngSubmit)="registrarUsuario()" >
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Username</span>
         <input
@@ -90,48 +90,27 @@
         El apellido es requerido
       </div>
 
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Email</span>
-        <input
-          id="email"
-          name="email"
-          formControlName="email"
-          type="email"
-          class="form-control"
-          placeholder="example@example.com"
-          aria-label="email"
-          aria-describedby="basic-addon1"
-        />
-      </div>
-      <div
-        class="text-danger"
-        *ngIf="formRegister.controls['email']
-      .touched && formRegister.get('email')?.errors?.['required'] "
-      >
-        El email es requerido
-      </div>
 
       <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Telefono</span>
-        <input
-          id="telefono"
-          name="telefono"
-          formControlName="telefono"
-          type="number"
-          class="form-control"
-          placeholder="Telefono"
-          aria-label="Telefono"
+        <span class="input-group-text" id="basic-addon1">Rol:</span>
+        <select
+          id="rol"
+          name="rol"
+          formControlName="rol"
+          class="form-select"
+          aria-label="rol"
           aria-describedby="basic-addon1"
-        />
+        >
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Admin" >Administrador</option>
+          <option value="Cliente" >Cliente</option>
+        </select>
       </div>
-      <div
-        class="text-danger"
-        *ngIf="formRegister.controls['telefono']
-      .touched && formRegister.get('telefono')?.errors?.['required'] "
-      >
-        El telefono es requerido
+      <div class="text-danger" *ngIf="formRegister.controls['rol'].touched && formRegister.get('rol')?.errors?.['required']">
+        Rol requerido
       </div>
 
+      
       <div class="input-group mb-3 d-flex justify-content-center gap-3">
         <button
           [disabled]="formRegister.invalid"

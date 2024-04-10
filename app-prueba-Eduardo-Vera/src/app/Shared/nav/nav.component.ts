@@ -8,7 +8,6 @@ import { LoginService } from 'src/app/Services/login/login.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
   username! : string;
   login! : boolean;
 
@@ -24,17 +23,22 @@ export class NavComponent implements OnInit {
           this.login = data;
       }
     )
-    this.username = this.loginService.currentUser.name;  
+    this.loginService.getUsername().subscribe(data =>{
+      this.username = data;
+      console.log(data +"Data");
+      console.log(this.username);
+    });  
+
     console.log(this.username)
   }
 
 
   logOut(){
-    this.loginService.userName.next("")
+    this.loginService.userName.next("");
+    localStorage.removeItem("token");
     this.loginService.isLogged.next(false)
     this.router.navigateByUrl("")
   }
-
 
 
 

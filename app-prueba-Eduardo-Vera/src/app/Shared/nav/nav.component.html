@@ -14,12 +14,14 @@
 
       <ng-template #ingreso>
 
-        <span class="m-3 text-center text-light">{{username}}</span>
+        <div class="d-flex justify-content-between gap-3">
+          <span class="mr-4">{{username | titlecase}}</span>
+          <button (click)="logOut()" type="button" class="btn btn-danger ml-4">
+            Salir
+          </button>
+        </div>
 
 
-        <button (click)="logOut()" type="button" class="btn btn-danger">
-          Salir
-        </button>
       </ng-template>
     
     </div>

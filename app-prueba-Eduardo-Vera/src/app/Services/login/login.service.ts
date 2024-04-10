@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Login } from 'src/app/Interfaces/usuarios.interface';
+import { Login, UsuarioResponse } from 'src/app/Interfaces/interfaces.interface';
 
 import {environment} from './../../../environments/environment.prod'
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,11 @@ export class LoginService {
   loginUsuario(usuario : Login){
     return this.http.post(environment.apiUrl+"/login",usuario);
   }
+
+  obtenerUsuario(username : string):Observable<UsuarioResponse>{
+    return this.http.get<UsuarioResponse>(environment.apiUrl+`/usuarios/${username}`);
+  }
+
 
   getIsLogged(){
     return this.isLogged.asObservable();

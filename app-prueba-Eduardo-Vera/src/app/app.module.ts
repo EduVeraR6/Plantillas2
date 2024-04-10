@@ -12,6 +12,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './Services/interceptor/auth.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardAdminComponent } from './Pages/dashboard-admin/dashboard-admin.component';
+import { MenuOpcionesComponent } from './Components/menu-opciones/menu-opciones.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardAdminComponent,
+    MenuOpcionesComponent
   ],
   imports: [
     AppRoutingModule,

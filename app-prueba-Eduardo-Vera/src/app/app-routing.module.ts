@@ -5,6 +5,8 @@ import { Page404Component } from './Pages/page404/page404.component';
 import { Page403Component } from './Pages/page403/page403.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
+import { DashboardAdminComponent } from './Pages/dashboard-admin/dashboard-admin.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -22,6 +24,10 @@ const routes: Routes = [
   {
     path : "register",
     component :RegisterComponent
+  },{
+    path : "dashboard-admin",
+    component : DashboardAdminComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: "404",

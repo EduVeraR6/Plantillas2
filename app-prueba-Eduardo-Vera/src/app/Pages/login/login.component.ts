@@ -5,7 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Login } from 'src/app/Interfaces/usuarios.interface';
+import { Login } from 'src/app/Interfaces/interfaces.interface';
 import { LoginService } from '../../Services/login/login.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
@@ -49,11 +49,23 @@ export class LoginComponent implements OnInit {
         this,this.loginService.isLogged.next(true);
         localStorage.setItem('token', data.jwtToken);
 
-        this.router.navigateByUrl('/dashboard-usuario');
+        this.loginService.userName.next(usuario.username);
 
-        this.snackBar.open('Bienvenido', 'Aceptar', {
-          duration: 3000,
-        });
+
+        this.loginService.obtenerUsuario(usuario.username).subscribe(data =>{
+
+
+          if(data.roles[0].rol === 'Admin'){
+            this.router.navigateByUrl('/dashboard-admin');
+          }
+
+
+          this.snackBar.open('Bienvenido', 'Aceptar', {
+            duration: 3000,
+          });
+        })
+
+
       },
       (error) => {
         this.snackBar.open(
