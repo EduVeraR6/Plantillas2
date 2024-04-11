@@ -1,7 +1,7 @@
 <div class="container d-flex justify-content-center mt-5">
   <mat-card class="col-6">
     <mat-card-title>
-      <h1 class="text-center fs-1 p-2">Registro Paciente</h1></mat-card-title
+      <h1 class="text-center fs-1 p-2">Registro Usuario</h1></mat-card-title
     >
     <form [formGroup]="formRegister" (ngSubmit)="registrarUsuario()" >
       <div class="input-group mb-3">
@@ -119,8 +119,8 @@
         >
           Registrar
         </button>
-        <button routerLink="" type="button" class="btn btn-secondary">
-          Home
+        <button routerLink="/login" type="button" class="btn btn-secondary">
+          Volver
         </button>
       </div>
     </form>
