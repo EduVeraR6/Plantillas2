@@ -23,6 +23,7 @@
         *ngIf="formRegister.controls['username']
       .touched && formRegister.get('username')?.errors?.['required'] "
       >
+      <i class="bi bi-exclamation-diamond-fill text-danger"></i>
         El username es requerido
       </div>
 
@@ -45,6 +46,7 @@
         *ngIf="formRegister.controls['password']
       .touched && formRegister.get('password')?.errors?.['required'] "
       >
+      <i class="bi bi-exclamation-diamond-fill text-danger"></i>
         El password es requerido
       </div>
 
@@ -66,6 +68,7 @@
         *ngIf="formRegister.controls['nombre']
       .touched && formRegister.get('nombre')?.errors?.['required'] "
       >
+      <i class="bi bi-exclamation-diamond-fill text-danger"></i>
         El nombre es requerido
       </div>
 
@@ -87,6 +90,7 @@
         *ngIf="formRegister.controls['apellido']
       .touched && formRegister.get('apellido')?.errors?.['required'] "
       >
+      <i class="bi bi-exclamation-diamond-fill text-danger"></i>
         El apellido es requerido
       </div>
 
@@ -107,6 +111,7 @@
         </select>
       </div>
       <div class="text-danger" *ngIf="formRegister.controls['rol'].touched && formRegister.get('rol')?.errors?.['required']">
+        <i class="bi bi-exclamation-diamond-fill text-danger"></i>
         Rol requerido
       </div>
 

@@ -27,6 +27,7 @@
                 *ngIf="formLogin.controls['username']
               .touched && formLogin.get('username')?.errors?.['required'] "
               >
+              <i class="bi bi-exclamation-diamond-fill text-danger"></i>
                 El username es requerido
               </div>
 
@@ -49,6 +50,7 @@
                 *ngIf="formLogin.controls['password']
               .touched && formLogin.get('password')?.errors?.['required'] "
               >
+              <i class="bi bi-exclamation-diamond-fill text-danger"></i>
                 El password es requerido
               </div>
 
